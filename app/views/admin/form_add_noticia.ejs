@@ -11,7 +11,16 @@
 
 		<form action="/noticias/salvar" method="POST">
 			<label>Title</label>
-			<input type="text" id="titulo" name="titulo" placeholder="Titulo da noticia"/>
+			<input type="text" id="titulo" name="titulo" placeholder="news title"/>
+			<br />
+			<label>Resume</label>
+			<input type="text" id="resumo" name="resumo" placeholder="resume"/>
+			<br />
+			<label>Author</label>
+			<input type="text" id="autor" name="autor" placeholder="author"/>
+			<br />
+			<label>Date</label>
+			<input type="date" id="data_criacao" name="data_criacao" placeholder="date"/>
 			<br />
 			<label>Text about</label>
 			<textarea id="noticia" name="noticia" rows="5" cols="30"></textarea>

@@ -2,7 +2,6 @@ var mysql = require('mysql');
 
 /*wrapper*/
 var connection = function(){
-    console.log('DB Loaded!');
     return mysql.createConnection(
         {
             host : 'lucasmence.ddns.net',
@@ -15,6 +14,5 @@ var connection = function(){
 }
 
 module.exports = function(){
-    console.log('DB module imported by autoload!');
     return connection;    
 }

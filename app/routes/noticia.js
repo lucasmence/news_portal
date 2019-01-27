@@ -3,9 +3,9 @@ module.exports = function(application) {
     application.get('/noticia', function(request, response){
 
         var connection = application.config.dbConnection();
-        var noticiasModel = application.app.models.noticiasModel();
+        var noticiasModel = new application.app.models.noticiasDAO(connection);
 
-        noticiasModel.getNoticia(connection, function(error, result){
+        noticiasModel.getNoticia(function(error, result){
             if (error){
                 response.send(error);
             }
