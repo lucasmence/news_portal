@@ -1,16 +1,15 @@
 var app = require('./config/server.js');
 
-app.get('/', function(request, response){
-    response.render('home/index.ejs');
-});
+var connection = require('./config/dbConnection.js');
+connection();
 
-app.get('/formulario_inclusao_noticia', function(request, response){
-    response.render('admin/form_add_noticia.ejs'); 
-});
+var rotaNoticias = require('./app/routes/noticias.js')(app,connection);
 
-app.get('/noticias', function(request, response){
-    response.render('noticias/noticias.ejs');
-});
+var rotaHome = require('./app/routes/home.js');
+rotaHome(app, connection);
+
+var rotaForm = require('./app/routes/formulario_inclusao_noticia.js');
+rotaForm(app, connection);
 
 app.listen(3000, function(){
     console.log('Server ON');
