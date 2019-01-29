@@ -5,6 +5,8 @@ to install use:
 
 > npm install
 
+to exexcute use:
+
 > node app.js 
 
 or 
